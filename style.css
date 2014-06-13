@@ -1,0 +1,11 @@
+#my-game {
+    width: 230px;
+    margin: 0 auto;
+}
+
+button {
+    width: 65px;
+    height: 65px;
+    margin: 0 4px 5px 5px;
+    cursor: pointer;
+}
