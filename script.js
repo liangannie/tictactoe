@@ -1,7 +1,6 @@
 (function($) {
  
-    var player1 = ' ';
-    var player2 = ' ';
+    var players = ["x","o"];
     var endOfGame = false;
     var playerTurn = 0;
     
@@ -30,5 +29,15 @@
                 }
              } 
      });
+     
+     // TODO check for winners
+     function winnerCheck() {
+        if ($(".button-0") == players[playerTurn] && $(".button-1") == players[playerTurn] && $(".button-2") == players[playerTurn]) {
+            return true;
+        };
+
+     // Check if game is over
+     // Winner or Draw?
+     // Continue playing if game is not over
     
 })(jQuery);
