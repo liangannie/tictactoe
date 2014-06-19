@@ -34,7 +34,7 @@
         
         // check rows
         if (buttonArr[0] == players[playerTurn] && buttonArr[1] == players[playerTurn] && buttonArr[2] == players[playerTurn]) {
-            return true;
+            alert(players[playerTurn] + "is the winner!");
         };
         if (buttonArr[3] == players[playerTurn] && buttonArr[4] == players[playerTurn] && buttonArr[5] == players[playerTurn]) {
             return true;
