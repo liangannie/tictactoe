@@ -18,7 +18,7 @@
     
     // if box is empty, set it to player 1, then switch turns
      $(".ttc").one('click', function () {
-         if (!!$(".ttc").length) {     
+         if ($(".ttc").length > 0) {     
              if (playerTurn === 0) {
                     $(this).append('<p>x</p>');
                     playerTurn = 1;
