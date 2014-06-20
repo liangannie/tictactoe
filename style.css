@@ -3,9 +3,17 @@
     margin: 0 auto;
 }
 
-button {
+.ttc {
     width: 65px;
     height: 65px;
     margin: 0 4px 5px 5px;
     cursor: pointer;
+    float: left;
+    border: 1px solid #999;
+}
+
+.ttc p {
+	text-align: center;
+	line-height: 12px;
+	font: 24px/12px arial, sans-serif;
 }
