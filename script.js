@@ -3,27 +3,27 @@
     var players = ["x","o"]; //array
     var endOfGame = false; //keep track of game over
     var playerTurn = 0; //keep track of whose turn 0 or 1
-    var buttonArr = jQuery.makeArray(document.getElementsByTagName("button"));
+    var boxesArr = jQuery.makeArray($('.ttc'));
     //var arr = $.makeArray(boxes);
     //var click = $(this).data('click');
     
     //create boxes
     for (var i = 0; i < 9; i++) {
-        $('#my-game').append('<button></button>');
+        $("#my-game").append("<div class='ttc'></div>");
         
-        $('button').each(function(i) {
+        $(".ttc").each(function(i) {
             $(this).addClass('button-'+i);
         });
     };
     
     // if box is empty, set it to player 1, then switch turns
-     $('button').one('click', function () {
-         if (!!$('button').length) {     
+     $(".ttc").one('click', function () {
+         if (!!$(".ttc").length) {     
              if (playerTurn === 0) {
-                    $(this).append('x');
+                    $(this).append('<p>x</p>');
                     playerTurn = 1;
                 } else {
-                    $(this).append('o');
+                    $(this).append('<p>o</p>');
                     playerTurn = 0;
                 }
              } 
