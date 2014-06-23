@@ -3,7 +3,9 @@
     var players = ["x","o"]; //array
     var endOfGame = false; //keep track of game over
     var playerTurn = 0; //keep track of whose turn 0 or 1
-    var boxesArr = jQuery.makeArray($('.ttc'));
+    var boxesArr= null;
+    
+    var boxes = $(".ttc");
     //var arr = $.makeArray(boxes);
     //var click = $(this).data('click');
     
@@ -16,55 +18,54 @@
         });
     };
     
+    var boxesArr = jQuery.makeArray($('.ttc')); //creates array after boxes are created
+    
     // if box is empty, set it to player 1, then switch turns
-     $(".ttc").one('click', function () {
-         if ($(".ttc").length > 0) {     
-             if (playerTurn === 0) {
-                    $(this).append('<p>x</p>');
+    $(".ttc").one('click', function () {
+        
+        $(this).append('<p>' + players[playerTurn] + '</p>');      
+        winnerCheck(boxesArr, players, playerTurn);
+        
+            if (playerTurn === 0) {
                     playerTurn = 1;
                 } else {
-                    $(this).append('<p>o</p>');
                     playerTurn = 0;
                 }
-             } 
      });
-     
-     // TODO check for winners
-         function checkWinner() {
-        
+    
+    //$(boxesArr[0]).text();
+    
+    function winnerCheck(boxesArr, players, playerTurn) {
         // check rows
-        if (buttonArr[0] == players[playerTurn] && buttonArr[1] == players[playerTurn] && buttonArr[2] == players[playerTurn]) {
-            alert(players[playerTurn] + "is the winner!");
+        if ($(boxesArr[0]).text() == players[playerTurn] && $(boxesArr[1]).text() == players[playerTurn] && $(boxesArr[2]).text() == players[playerTurn]) {
+            //return true;
+            alert(players[playerTurn] + " is the winner!");
         };
-        if (buttonArr[3] == players[playerTurn] && buttonArr[4] == players[playerTurn] && buttonArr[5] == players[playerTurn]) {
+        if ($(boxesArr[3]).text() == players[playerTurn] && $(boxesArr[4]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn]) {
             return true;
         };
-        if (buttonArr[6] == players[playerTurn] && buttonArr[7] == players[playerTurn] && buttonArr[8] == players[playerTurn]) {
+        if ($(boxesArr[6]).text() == players[playerTurn] && $(boxesArr[7]).text() == players[playerTurn] && $(boxesArr[8]).text() == players[playerTurn]) {
             return true;
         };
         
         // check columns
-        if (buttonArr[0] == players[playerTurn] && buttonArr[4] == players[playerTurn] && buttonArr[6] == players[playerTurn]) {
+        if ($(boxesArr[0]).text() == players[playerTurn] && $(boxesArr[4]).text() == players[playerTurn] && $(boxesArr[6]).text() == players[playerTurn]) {
             return true;
         };
-        if (buttonArr[1] == players[playerTurn] && buttonArr[5] == players[playerTurn] && buttonArr[7] == players[playerTurn]) {
+        if ($(boxesArr[1]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn] && $(boxesArr[7]).text() == players[playerTurn]) {
             return true;
         };
-        if (buttonArr[2] == players[playerTurn] && buttonArr[6] == players[playerTurn] && buttonArr[8] == players[playerTurn]) {
+        if ($(boxesArr[2]).text() == players[playerTurn] && $(boxesArr[6]).text() == players[playerTurn] && $(boxesArr[8]).text() == players[playerTurn]) {
             return true;
         };
         
         // check diagonals
-        if (buttonArr[0] == players[playerTurn] && buttonArr[5] == players[playerTurn] && buttonArr[8] == players[playerTurn]) {
+        if ($(boxesArr[0]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn] && $(boxesArr[8]).text() == players[playerTurn]) {
             return true;
         };
-        if (buttonArr[2] == players[playerTurn] && buttonArr[5] == players[playerTurn] && buttonArr[6] == players[playerTurn]) {
+        if ($(boxesArr[2]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn] && $(boxesArr[6]).text() == players[playerTurn]) {
             return true;
         };
     };
-
-     // Check if game is over
-     // Winner or Draw?
-     // Continue playing if game is not over
     
 })(jQuery);
