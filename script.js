@@ -1,7 +1,7 @@
 (function($) {
  
     var players = ["x","o"]; //array
-    //var endOfGame = false; //keep track of game over
+    var gameOver = false; //keep track of game over
     var playerTurn = 0; //keep track of whose turn 0 or 1
     var boxesArr= null;
     
@@ -38,37 +38,38 @@
     function winnerCheck(boxesArr, players, playerTurn) {
         // check rows
         if ($(boxesArr[0]).text() == players[playerTurn] && $(boxesArr[1]).text() == players[playerTurn] && $(boxesArr[2]).text() == players[playerTurn]) {
-            endOfGame("Player " + players[playerTurn] + " won!");
+            endOfGame();
+
         };
         if ($(boxesArr[3]).text() == players[playerTurn] && $(boxesArr[4]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn]) {
-            
+            endOfGame();
         };
         if ($(boxesArr[6]).text() == players[playerTurn] && $(boxesArr[7]).text() == players[playerTurn] && $(boxesArr[8]).text() == players[playerTurn]) {
-            
+            endOfGame();
         };
         
         // check columns
         if ($(boxesArr[0]).text() == players[playerTurn] && $(boxesArr[4]).text() == players[playerTurn] && $(boxesArr[6]).text() == players[playerTurn]) {
-            
+            endOfGame();
         };
         if ($(boxesArr[1]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn] && $(boxesArr[7]).text() == players[playerTurn]) {
-
+            endOfGame();
         };
         if ($(boxesArr[2]).text() == players[playerTurn] && $(boxesArr[6]).text() == players[playerTurn] && $(boxesArr[8]).text() == players[playerTurn]) {
-           
+            endOfGame();
         };
         
         // check diagonals
         if ($(boxesArr[0]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn] && $(boxesArr[8]).text() == players[playerTurn]) {
-
+            endOfGame();
         };
         if ($(boxesArr[2]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn] && $(boxesArr[6]).text() == players[playerTurn]) {
-            
+            endOfGame();
         };
     };
-    
-    function endOfGame(alertMsg) {
-        alert(alertMsg);
+
+    function endOfGame() {
+        alert("Player " + players[playerTurn] + " won!");
         location.reload();
     };
     
