@@ -49,13 +49,13 @@
         };
         
         // check columns
-        if ($(boxesArr[0]).text() == players[playerTurn] && $(boxesArr[4]).text() == players[playerTurn] && $(boxesArr[6]).text() == players[playerTurn]) {
+        if ($(boxesArr[0]).text() == players[playerTurn] && $(boxesArr[3]).text() == players[playerTurn] && $(boxesArr[6]).text() == players[playerTurn]) {
             endOfGame();
         };
-        if ($(boxesArr[1]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn] && $(boxesArr[7]).text() == players[playerTurn]) {
+        if ($(boxesArr[1]).text() == players[playerTurn] && $(boxesArr[4]).text() == players[playerTurn] && $(boxesArr[7]).text() == players[playerTurn]) {
             endOfGame();
         };
-        if ($(boxesArr[2]).text() == players[playerTurn] && $(boxesArr[6]).text() == players[playerTurn] && $(boxesArr[8]).text() == players[playerTurn]) {
+        if ($(boxesArr[2]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn] && $(boxesArr[8]).text() == players[playerTurn]) {
             endOfGame();
         };
         
