@@ -1,13 +1,10 @@
 (function($) {
  
-    var players = ["x","o"]; //array
-    var gameOver = false; //keep track of game over
-    var playerTurn = 0; //keep track of whose turn 0 or 1
+    var gameOver = false;
+    var playerTurn = "X"; 
     var boxesArr= null;
-    
     var boxes = $(".ttc");
-    //var arr = $.makeArray(boxes);
-    //var click = $(this).data('click');
+
     
     //create boxes
     for (var i = 0; i < 9; i++) {
@@ -18,58 +15,56 @@
         });
     };
     
-    var boxesArr = jQuery.makeArray($('.ttc')); //creates array after boxes are created
+    //creates array after boxes are created
+    var boxesArr = jQuery.makeArray($('.ttc')); 
     
     // if box is empty, set it to player 1, then switch turns
     $(".ttc").one('click', function () {
         
-        $(this).append('<p>' + players[playerTurn] + '</p>');      
-        winnerCheck(boxesArr, players, playerTurn);
+        $(this).append('<p>' + playerTurn + '</p>');      
+        winnerCheck(boxesArr, playerTurn);
         
-            if (playerTurn === 0) {
-                    playerTurn = 1;
+            if (playerTurn === "X") {
+                    playerTurn = "O";
                 } else {
-                    playerTurn = 0;
+                    playerTurn = "X";
                 }
      });
     
-    //$(boxesArr[0]).text();
-    
-    function winnerCheck(boxesArr, players, playerTurn) {
+    function winnerCheck(boxesArr, playerTurn) {
         // check rows
-        if ($(boxesArr[0]).text() == players[playerTurn] && $(boxesArr[1]).text() == players[playerTurn] && $(boxesArr[2]).text() == players[playerTurn]) {
-            endOfGame();
-
-        };
-        if ($(boxesArr[3]).text() == players[playerTurn] && $(boxesArr[4]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn]) {
+        if ($(boxesArr[0]).text() == playerTurn && $(boxesArr[1]).text() == playerTurn && $(boxesArr[2]).text() == playerTurn) {
             endOfGame();
         };
-        if ($(boxesArr[6]).text() == players[playerTurn] && $(boxesArr[7]).text() == players[playerTurn] && $(boxesArr[8]).text() == players[playerTurn]) {
+        if ($(boxesArr[3]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[5]).text() == playerTurn) {
+            endOfGame();
+        };
+        if ($(boxesArr[6]).text() == playerTurn && $(boxesArr[7]).text() == playerTurn && $(boxesArr[8]).text() == playerTurn) {
             endOfGame();
         };
         
         // check columns
-        if ($(boxesArr[0]).text() == players[playerTurn] && $(boxesArr[3]).text() == players[playerTurn] && $(boxesArr[6]).text() == players[playerTurn]) {
+        if ($(boxesArr[0]).text() == playerTurn && $(boxesArr[3]).text() == playerTurn && $(boxesArr[6]).text() == playerTurn) {
             endOfGame();
         };
-        if ($(boxesArr[1]).text() == players[playerTurn] && $(boxesArr[4]).text() == players[playerTurn] && $(boxesArr[7]).text() == players[playerTurn]) {
+        if ($(boxesArr[1]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[7]).text() == playerTurn) {
             endOfGame();
         };
-        if ($(boxesArr[2]).text() == players[playerTurn] && $(boxesArr[5]).text() == players[playerTurn] && $(boxesArr[8]).text() == players[playerTurn]) {
+        if ($(boxesArr[2]).text() == playerTurn && $(boxesArr[5]).text() == playerTurn && $(boxesArr[8]).text() == playerTurn) {
             endOfGame();
         };
         
         // check diagonals
-        if ($(boxesArr[0]).text() == players[playerTurn] && $(boxesArr[4]).text() == players[playerTurn] && $(boxesArr[8]).text() == players[playerTurn]) {
+        if ($(boxesArr[0]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[8]).text() == playerTurn) {
             endOfGame();
         };
-        if ($(boxesArr[2]).text() == players[playerTurn] && $(boxesArr[4]).text() == players[playerTurn] && $(boxesArr[6]).text() == players[playerTurn]) {
+        if ($(boxesArr[2]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[6]).text() == playerTurn) {
             endOfGame();
         };
     };
 
     function endOfGame() {
-        alert("Player " + players[playerTurn] + " won!");
+        alert("Player " + playerTurn + " won!");
         location.reload();
     };
     
