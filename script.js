@@ -63,9 +63,13 @@
         };
     };
 
-    function endOfGame() {
-        alert("Player " + playerTurn + " won!");
-        location.reload();
+        function endOfGame() {
+         var button = $("#reload");
+         $("#message").append("Player " + playerTurn + " won!");
+         button.show();
+         button.click(function() {
+             location.reload();
+         });
     };
     
 })(jQuery);
