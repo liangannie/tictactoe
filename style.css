@@ -1,3 +1,12 @@
+body {
+    font: 100% arial,sans-serif;
+}
+
+h1 {
+    text-align:center;
+    color: #60b044;
+}
+
 #my-game {
 	width: 230px;
 	margin: 0 auto;
@@ -12,7 +21,7 @@
 #reload {
 	display: none;
 	position: relative;
-	left: 39%;
+	left: 35%;
 	color: #fff;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
 	background-color: #60b044;
@@ -20,10 +29,10 @@
 	background-image: linear-gradient(#8add6d, #60b044);
 	background-repeat: repeat-x;
 	border-color: #5ca941;
-	padding: 10px 30px;
-	border: 1px;
+	padding: 10px 50px;
+	border: none;
+	padding: 10px 50px;
 	font-size: 18px;
-	cursor: pointer;
 }
 
 .ttc {
