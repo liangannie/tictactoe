@@ -32,35 +32,16 @@
      });
     
     function winnerCheck(boxesArr, playerTurn) {
-        // check rows
-        if ($(boxesArr[0]).text() == playerTurn && $(boxesArr[1]).text() == playerTurn && $(boxesArr[2]).text() == playerTurn) {
+        if ( ($(boxesArr[0]).text() == playerTurn && $(boxesArr[1]).text() == playerTurn && $(boxesArr[2]).text() == playerTurn) ||
+            ($(boxesArr[3]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[5]).text() == playerTurn) ||
+            ($(boxesArr[6]).text() == playerTurn && $(boxesArr[7]).text() == playerTurn && $(boxesArr[8]).text() == playerTurn) ||
+            ($(boxesArr[0]).text() == playerTurn && $(boxesArr[3]).text() == playerTurn && $(boxesArr[6]).text() == playerTurn) ||
+            ($(boxesArr[1]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[7]).text() == playerTurn) ||
+            ($(boxesArr[2]).text() == playerTurn && $(boxesArr[5]).text() == playerTurn && $(boxesArr[8]).text() == playerTurn) ||
+            ($(boxesArr[0]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[8]).text() == playerTurn) ||
+            ($(boxesArr[2]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[6]).text() == playerTurn) ){
             endOfGame();
-        };
-        if ($(boxesArr[3]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[5]).text() == playerTurn) {
-            endOfGame();
-        };
-        if ($(boxesArr[6]).text() == playerTurn && $(boxesArr[7]).text() == playerTurn && $(boxesArr[8]).text() == playerTurn) {
-            endOfGame();
-        };
-        
-        // check columns
-        if ($(boxesArr[0]).text() == playerTurn && $(boxesArr[3]).text() == playerTurn && $(boxesArr[6]).text() == playerTurn) {
-            endOfGame();
-        };
-        if ($(boxesArr[1]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[7]).text() == playerTurn) {
-            endOfGame();
-        };
-        if ($(boxesArr[2]).text() == playerTurn && $(boxesArr[5]).text() == playerTurn && $(boxesArr[8]).text() == playerTurn) {
-            endOfGame();
-        };
-        
-        // check diagonals
-        if ($(boxesArr[0]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[8]).text() == playerTurn) {
-            endOfGame();
-        };
-        if ($(boxesArr[2]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[6]).text() == playerTurn) {
-            endOfGame();
-        };
+        };    
     };
 
         function endOfGame() {
