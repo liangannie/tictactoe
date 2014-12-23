@@ -2,6 +2,7 @@
  
     var gameOver = false;
     var playerTurn = "X"; 
+    var count = 0;
     
     //create boxes
     for (var i = 0; i < 9; i++) {
@@ -9,10 +10,9 @@
     }
   
 var boxesArr = $.makeArray($('.ttc'));
-  
-if (gameOver === false) {
+
       $(".ttc").one('click', function () { 
-        
+        if (gameOver === false) {
           $(this).append('<p>' + playerTurn + '</p>');
           winnerCheck(boxesArr, playerTurn);
         
@@ -21,10 +21,9 @@ if (gameOver === false) {
                 } else {
                     playerTurn = "X";
                 }
+          }
      });
-} else {
-  alert("test!!!");
-}
+
   
     function winnerCheck(boxesArr, playerTurn) {
         if (($(boxesArr[0]).text() == playerTurn && $(boxesArr[1]).text() == playerTurn && $(boxesArr[2]).text() == playerTurn) ||
@@ -36,7 +35,6 @@ if (gameOver === false) {
             ($(boxesArr[0]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[8]).text() == playerTurn) ||
             ($(boxesArr[2]).text() == playerTurn && $(boxesArr[4]).text() == playerTurn && $(boxesArr[6]).text() == playerTurn) ){
             endOfGame();
-          return;
         }
     }
 
