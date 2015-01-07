@@ -24,7 +24,7 @@
                 }
            count++;
           }
-         if (count > 8) {
+         if (count >= 9) {
              reload();
              $("#message").append("It's a TIE!");
          }
